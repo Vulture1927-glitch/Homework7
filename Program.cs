@@ -54,7 +54,35 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        
+       int values = {52, 37,68, 29, 44, 41, 75, 80, 61, 78 };
+       foreach( int value in values)
+       {
+        root = Insert(root, value);
+       }  
+        int values2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+
+        foreach(value in values2)
+        {
+            root = Insert(root, value);
+        }
+
+
+    }
+
+    public class AvlNode
+    {
+        public int Value;
+        public AvlNode Left;
+        public AvlNode Right;
+        public int Height;
+
+        public AvlNode(int value)
+        {
+            Value = value;
+            Left = null;
+            Right = null;
+            Height = 1; // New node is initially added at leaf
+        }
 
         public int GetHeight(AvlNode node)
         {
@@ -203,20 +231,4 @@ public class Program
 
             return IsBalanced(node.Left) && IsBalanced(node.Right);
         }
-
-    public class AvlNode
-    {
-        public int Value;
-        public AvlNode Left;
-        public AvlNode Right;
-        public int Height;
-
-        public AvlNode(int value)
-        {
-            Value = value;
-            Left = null;
-            Right = null;
-            Height = 1; // New node is initially added at leaf
-        }
     }
-}
